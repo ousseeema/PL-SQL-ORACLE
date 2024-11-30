@@ -1,0 +1,55 @@
+1. Créer une procédure pour ajouter un employé
+Écrivez une procédure PL/SQL nommée add_employee qui :
+
+Prend en entrée les informations d’un employé : employee_id, name, department_id, et salary.
+Vérifie si le department_id existe dans la table departement.
+Si le department_id n'existe pas, lève une exception personnalisée DepartmentNotFound.
+Sinon, insère les informations de l’employé dans la table employee.
+
+
+2. Créer une fonction pour calculer le salaire total d’un département
+Écrivez une fonction PL/SQL nommée get_total_salary qui :
+
+Prend en entrée un department_id.
+Retourne le salaire total de tous les employés de ce département.
+Si le department_id n’a aucun employé, retourne 0.
+
+
+3. Créer une procédure pour transférer un employé vers un autre département
+Écrivez une procédure PL/SQL nommée transfer_employee qui :
+
+Prend en entrée employee_id et le new_department_id.
+Vérifie si l’employee_id existe dans la table employee.
+Si l’employee_id n'existe pas, lève une exception personnalisée EmployeeNotFound.
+Vérifie si le new_department_id existe dans la table departement.
+Si le new_department_id n’existe pas, lève une exception DepartmentNotFound.
+Si tout est valide, met à jour le department_id de l’employé.
+
+
+4. Créer une fonction pour trouver le nombre d’employés par département
+Écrivez une fonction PL/SQL nommée count_employees qui :
+
+Prend en entrée un department_id.
+Retourne le nombre d’employés dans ce département.
+Si aucun employé n’existe, retourne 0.
+
+5. Gérer les exceptions lors de l’ajout d’un employé
+Modifiez la procédure add_employee (exercice 1) pour gérer les exceptions :
+Si l'insertion échoue pour une raison quelconque (comme une contrainte), capturez l'exception WHEN OTHERS et affichez un message personnalisé dans le log.
+
+
+6. Créer une procédure pour supprimer un employé
+Écrivez une procédure PL/SQL nommée delete_employee qui :
+
+Prend en entrée un employee_id.
+Vérifie si l’employee_id existe.
+Si non, lève une exception EmployeeNotFound.
+Supprime l’employé correspondant.
+
+
+7. Calculer l’augmentation de salaire avec une fonction
+Écrivez une fonction PL/SQL nommée calculate_raise qui :
+
+Prend en entrée le employee_id et un pourcentage d’augmentation (raise_percent).
+Retourne le nouveau salaire après application de l'augmentation.
+Si l’employee_id n’existe pas, lève une exception EmployeeNotFound.
